@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPoints - Registrar Acao</title>
+    <style>
+        body {
+            background-color: #ddd;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .celular {
+            position: relative;
+            background-color: white;
+            width: 375px;
+            height: 667px;
+            border: 10px solid #333;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            border-bottom: 1px solid #ccc;
+        }
+        header div {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .checkbox {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .checkbox input {
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        main img {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ccc;
+        }
+
+        .desc {
+            min-height: 100px;
+            resize: none;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .photo-area {
+            margin-top: 1rem;
+            width: 100%;
+            height: 170px;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            border-radius: 0.5rem;
+        }
+
+        .photo {
+            width: 50%;
+            border: 2.5px solid black;
+            height: 100%;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .upload {
+            flex: 1;
+            border: 2.5px solid black;
+            font-size: 1.5rem;
+            border-radius: 2.00rem;
+            padding: 1.25rem 0.5rem;
+            box-shadow: 6px 6px 1px black;
+            cursor: pointer;
+            transition: all .5s ease;
+            user-select: none;
+        }
+
+        .upload:hover {
+            background-color: #ccc;
+        }
+
+        .cortina {
+            display: none;
+            position: absolute;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: gray;
+            opacity: 0.7;
+        }
+
+        .confirm {
+            position: absolute;
+            z-index: 1001;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .pop-up {
+            width: 80%;
+            border: 2.5px solid black;
+            border-radius: 1.5rem;
+            background-color: #fff;
+            margin-bottom: 200px;
+            overflow: hidden;
+        }
+
+        .top {
+            height: 55%;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+            border-bottom: 2.5px solid black;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .bottom {
+            padding: 1rem;
+            height: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #424242;
+            user-select: none;
+            cursor: pointer;
+            transition: all .5s ease;
+        }
+
+        .bottom:hover {
+            background-color: #ccc;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .share {
+            width: 30px;
+            height: 30px;
+        }
+
+        .text {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .ativo {
+            border-bottom: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="celular">
+
+        <div class="confirm">
+            <div class="pop-up">
+                <div class="top">
+                    <span class="title">Sucesso</span>
+                    <span>Ação enviada para análise</span>
+                </div>
+                <div class="bottom">
+                    <div class="text">
+                        <span>Voltar para Home </span>
+                        <img class="share" src="share.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cortina"></div>
+
+        <header>
+            <div><a href="home.html" style="text-decoration: none; color: black;">HOME</a></div>
+            <div class="ativo"><a href="registraracao.html" style="text-decoration: none; color: black;">REG. AÇÃO</a></div>
+            <div><a href="loja.html" style="text-decoration: none; color: black;">LOJA</a></div>
+        </header>
+        <main>
+            <div class="photo-area">
+                <img class="photo" src="PHOTO.jpg" alt="">
+                <div class="upload">
+                    + IMAGEM
+                </div>
+            </div>
+            <input type="text" placeholder="Título da Ação">
+            <textarea class="desc" type="text" placeholder="Descrição"></textarea>
+            <button id="btn_registrar">REGISTRAR</button>
+        </main>
+        <footer>
+            ECOPOINTS
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const btnRegistrar = document.querySelector('#btn_registrar');
+    const btnVoltarHome = document.querySelector('.bottom');
+    const cortina = document.querySelector('.cortina');
+    const confirm = document.querySelector('.confirm');
+
+    btnRegistrar.addEventListener('click', () => {
+        cortina.style.display = 'block';
+        confirm.style.display = 'flex';
+    });
+
+    btnVoltarHome.addEventListener('click', () => {
+        cortina.style.display = 'none';
+        confirm.style.display = 'none';
+        window.location.href = 'home.html';
+    });
+</script>

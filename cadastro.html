@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPoints - Cadastro</title>
+    <style>
+        body {
+            background-color: #ddd;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .celular {
+            background-color: white;
+            width: 375px;
+            height: 667px;
+            border: 10px solid #333;    
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .checkbox {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .checkbox input {
+            margin-right: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        main img {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ccc;
+        }
+        .ativo {
+            border-bottom: 3px solid black;
+        }
+        header div {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="celular">
+        <header>
+            <div><a href="login.html" style="text-decoration: none; color: black;">LOGIN</a></div>
+            <div class="ativo"><a href="cadastro.html" style="text-decoration: none; color: black;">CADASTRO</a></div>
+        </header>              
+        <main>
+            <img src="imgEcoPoints.png" alt="EcoPoints Logo">
+            <input type="text" placeholder="Nome do usuário">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Senha">
+            <input type="password" placeholder="Confirmar senha">
+            <div class="checkbox">
+                <input type="checkbox" id="termos">
+                <label for="termos">Aceito os termos de uso</label>
+            </div>
+            <button onclick="window.location.href='login.html'">CADASTRAR</button>
+        </main>
+        <footer>
+            ECOPOINTS
+        </footer>
+    </div>
+</body>
+</html>
